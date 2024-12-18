@@ -1,0 +1,37 @@
+que hace ese contenedor?
+El contenedor en el contexto de awilix y 
+la inyección de dependencias se encarga de gestionar
+ y proveer instancias de clases y servicios en tu aplicación. 
+ Aquí tienes una explicación más detallada de sus funciones principales:
+
+Funciones del Contenedor
+Registro de Dependencias:
+
+El contenedor permite registrar clases, servicios, valores 
+o funciones que tu aplicación necesitará. 
+
+Resolución de Dependencias:
+
+El contenedor se encarga de resolver y proveer las dependencias cuando se solicitan. 
+Si UserController necesita una instancia de UserService, 
+el contenedor proporciona esa instancia automáticamente, 
+asegurando que todas las dependencias requeridas sean satisfechas.
+
+Gestión del Ciclo de Vida:
+
+Con métodos como .singleton(), puedes controlar el ciclo de vida de las instancias.
+ Un singleton asegura que solo haya una única instancia de esa clase en toda la aplicación. 
+ También podrías usar .scoped() para crear una nueva instancia por cada solicitud HTTP o .transient() para una nueva instancia cada vez que se inyecta.
+
+Inyección de Dependencias:
+
+Facilita la inyección automática de dependencias en clases y funciones, 
+reduciendo el acoplamiento y mejorando la mantenibilidad del código.
+ Esto significa que cuando creas una instancia de UserController, 
+ el contenedor se encarga de inyectar UserService, AuthService y LoggerService automáticamente.
+
+Modularidad y Escalabilidad:
+
+Permite que la aplicación sea más modular y escalable. 
+Puedes agregar, cambiar o quitar dependencias sin tener que modificar cada lugar donde se usan, 
+lo que facilita el mantenimiento y la evolución del código.
