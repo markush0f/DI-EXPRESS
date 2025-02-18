@@ -1,43 +1,45 @@
-# 🌟 Implementación de Inyección de Dependencias en Express con Awilix
+# 🌟 Dependency Injection in Express with Awilix
 
-Este mini-proyecto muestra cómo implementar **Inyección de Dependencias (DI)** en una aplicación **Express** utilizando **Awilix**, un contenedor de **Inversión de Control (IoC)** para **Node.js**.
+This mini-project demonstrates how to implement **Dependency Injection (DI)** in an **Express** application using **Awilix**, an **Inversion of Control (IoC)** container for **Node.js**.
 
----
-
-## 📌 Introducción a Awilix y DI
-
-El contenedor en el contexto de **Awilix** se encarga de gestionar y proveer instancias de clases y servicios en tu aplicación mediante la **Inyección de Dependencias**. Aquí se detallan las funciones principales del contenedor:
-
-### ⚙️ Funciones del Contenedor
-
-1. 🔹 **Registro de Dependencias:**
-   - Permite registrar **clases, servicios, valores o funciones** que la aplicación necesitará.
-
-2. 🔹 **Resolución de Dependencias:**
-   - Se encarga de **resolver y proveer** las dependencias cuando se solicitan.
-   - Si `UserController` necesita una instancia de `UserService`, el contenedor la proporciona automáticamente.
-
-3. 🔹 **Gestión del Ciclo de Vida:**
-   - Métodos disponibles:
-     - `.singleton()`: Garantiza **una única instancia** en toda la aplicación.
-     - `.scoped()`: Crea **una nueva instancia por cada solicitud HTTP**.
-     - `.transient()`: Crea **una nueva instancia cada vez que se inyecta**.
-
-4. 🔹 **Inyección de Dependencias Automática:**
-   - Reduce el acoplamiento y mejora la mantenibilidad del código.
-   - Ejemplo: Al instanciar `UserController`, Awilix inyecta automáticamente `UserService`, `AuthService` y `LoggerService`.
-
-5. 🔹 **Modularidad y Escalabilidad:**
-   - Permite agregar, cambiar o quitar dependencias sin modificar múltiples partes del código.
-   - Facilita el mantenimiento y la evolución de la aplicación.
+[🇪🇸 Switch to Spanish](#-inyección-de-dependencias-en-express-con-awilix)
 
 ---
 
-## 🚀 Ejemplo de Implementación
+## 📌 Introduction to Awilix and DI
 
-### 🔧 1. Instalación de Awilix
+In the context of **Awilix**, the container manages and provides instances of classes and services in your application through **Dependency Injection**. Below are the main container functions:
 
-Instala **Awilix** y las dependencias necesarias:
+### ⚙️ Container Functions
+
+1. 🔹 **Dependency Registration:**
+   - Allows registering **classes, services, values, or functions** needed by the application.
+
+2. 🔹 **Dependency Resolution:**
+   - Resolves and provides dependencies when requested.
+   - If `UserController` needs an instance of `UserService`, the container automatically provides it.
+
+3. 🔹 **Lifecycle Management:**
+   - Available methods:
+     - `.singleton()`: Ensures **a single instance** throughout the application.
+     - `.scoped()`: Creates **a new instance per HTTP request**.
+     - `.transient()`: Creates **a new instance each time it's injected**.
+
+4. 🔹 **Automatic Dependency Injection:**
+   - Reduces coupling and improves code maintainability.
+   - Example: When instantiating `UserController`, Awilix automatically injects `UserService`, `AuthService`, and `LoggerService`.
+
+5. 🔹 **Modularity and Scalability:**
+   - Allows adding, modifying, or removing dependencies without modifying multiple code parts.
+   - Simplifies maintenance and application evolution.
+
+---
+
+## 🚀 Implementation Example
+
+### 🔧 1. Install Awilix
+
+Install **Awilix** and required dependencies:
 
 ```bash
 npm install awilix express
